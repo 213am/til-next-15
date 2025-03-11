@@ -1,3 +1,18 @@
+import style from "@/app/good/[id]/page.module.css";
+import { IGoodDataType } from "@/types/types";
+import Image from "next/image";
+
+const mockData: IGoodDataType = {
+  id: 1,
+  title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+  price: 109.95,
+  description:
+    "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+  category: "men's clothing",
+  image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+  rating: { rate: 3.9, count: 120 },
+};
+
 export default async function Page({
   params,
 }: {
@@ -6,5 +21,23 @@ export default async function Page({
   const { id } = await params;
   console.log(id);
 
-  return <div> {id}번 : 제품 상세페이지</div>;
+  const { title, image, category, rating, description, price } = mockData;
+
+  return (
+    <div className={style.container}>
+      <section>
+        <div className={style.title}>{title}</div>
+        <div className={style.price}>$ {price}</div>
+      </section>
+      <div className={style.image} style={{ backgroundImage: `url(${image})` }}>
+        <Image src={image} width={245} height={350} alt={title} />
+      </div>
+      <div className={style.category}>{category}</div>
+      <div className={style.rating}>
+        Rating : {rating.rate} / {rating.count}
+      </div>
+
+      <div className={style.description}>{description}</div>
+    </div>
+  );
 }

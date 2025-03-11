@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container > section {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 18px;
+}
+
+.image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.imgae::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.image > img {
+  position: relative;
+  max-height: 350px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.category {
+  color: rgb(0, 153, 255);
+}
+.rating {
+  color: rgba(255, 208, 0, 1);
+}
+
+.description {
+  color: #333333;
+  padding: 20px;
+  background-color: rgba(245, 245, 245, 0.8);
+  line-height: 1.5;
+}
