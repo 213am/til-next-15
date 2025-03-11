@@ -977,7 +977,7 @@ export default async function Page({
   background-repeat: no-repeat;
   background-size: cover;
 }
-.imgae::before {
+.image::before {
   content: "";
   position: absolute;
   left: 0;
