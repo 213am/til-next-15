@@ -1,21 +1,17 @@
-import good from "@/mock/good.json";
 import style from "@/app/(with-search)/page.module.css";
-import GoodItem from "@/components/GoodItem";
+import AllGoods from "@/components/AllGoods";
+import RandomGoods from "@/components/RandomGoods";
 
 export default function Home() {
   return (
     <div className={style.container}>
       <section>
         <h3>지금 추천하는 상품</h3>
-        {good.map((item) => (
-          <GoodItem key={item.id} {...item} />
-        ))}
+        <RandomGoods />
       </section>
       <section>
         <h3>전체 상품</h3>
-        {good.map((item) => (
-          <GoodItem key={item.id} {...item} />
-        ))}
+        <AllGoods />
       </section>
     </div>
   );

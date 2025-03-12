@@ -21,7 +21,7 @@ export default function RootLayout({
             <Link href={"/"}>👕 Shopping Mall 👔</Link>
           </header>
           <main>{children}</main>
-          <footer>하단</footer>
+          <footer></footer>
         </div>
       </body>
     </html>

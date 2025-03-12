@@ -1,6 +1,6 @@
 import style from "@/app/(with-search)/search/page.module.css";
 import GoodItem from "@/components/GoodItem";
-import goods from "@/mock/good.json";
+import { IGoodDataType } from "@/types/types";
 
 export default async function Page({
   searchParams,
@@ -8,12 +8,24 @@ export default async function Page({
   searchParams: Promise<{ keyword: string }>;
 }) {
   const { keyword } = await searchParams;
-  console.log(keyword);
+
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/products/category/${keyword}`
+  );
+  const goods: IGoodDataType[] = await res.json();
+
+  if (goods.length === 0) {
+    return (
+      <div>
+        <strong>{keyword}</strong> 카테고리에 해당하는 제품이 없습니다
+      </div>
+    );
+  }
 
   return (
     <div className={style.container}>
       <h4>
-        <strong>{keyword}</strong> 에 대한 검색페이지
+        카테고리명 : <strong>{keyword}</strong> 에 대한 검색페이지
       </h4>
       <div>
         {goods.map((item) => (
