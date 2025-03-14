@@ -1,3 +1,3 @@
 export default function NotFound() {
-  return <div>query 를 불러올 수 없습니다</div>;
+  return <div>쿼리가 잘못된 경로 입니다.</div>;
 }

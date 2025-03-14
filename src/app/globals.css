@@ -4,14 +4,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   outline-style: none;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
-
 a {
   text-decoration: none;
-  color: #000000;
+  color: #000;
 }

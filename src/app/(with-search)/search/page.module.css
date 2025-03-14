@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 .container > h4 > strong {
-  color: rgb(0, 185, 93);
+  color: #e007ad;
   font-size: 20px;
   text-decoration: underline;
 }
