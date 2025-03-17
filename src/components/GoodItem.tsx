@@ -1,9 +1,9 @@
-import { IGoodDataType } from "@/types/types";
+import { GoodDataType } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
 import style from "@/components/GoodItem.module.css";
 
-const GoodItem = ({ id, title, image, category, rating }: IGoodDataType) => {
+const GoodItem = ({ id, title, image, category, rating }: GoodDataType) => {
   return (
     <Link href={`/good/${id}`} className={style.container}>
       <div>

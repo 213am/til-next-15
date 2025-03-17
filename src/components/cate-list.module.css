@@ -1,0 +1,7 @@
+.cate_containter {
+  display: flex;
+  flex-direction: column;
+}
+.cate_containter strong {
+  color: pink;
+}
