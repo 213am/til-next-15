@@ -20,35 +20,6 @@ async function SearchResult({ keyword }: { keyword: string }) {
   );
 }
 
-// SEO 적용
-// export const metadata: Metadata = {
-//   title: "상품 검색결과 페이지",
-//   description: "상품 검색결과 페이지입니다.",
-//   openGraph: {
-//     title: "상품 검색결과 페이지",
-//     description: "상품 검색결과 페이지입니다.",
-//     images: [{ url: "/thumbnail.png" }],
-//   },
-// };
-
-// SEO
-export const generateMetadata = async ({
-  searchParams,
-}: {
-  searchParams: Promise<{ keyword: string }>;
-}) => {
-  const { keyword } = await searchParams;
-  return {
-    title: `상품 ${keyword} 검색 페이지`,
-    description: `상품 ${keyword} 검색 페이지입니다.`,
-    openGraph: {
-      title: `상품 ${keyword} 검색 페이지`,
-      description: `상품 ${keyword} 검색 페이지입니다.`,
-      images: [{ url: "/thumbnail.png" }],
-    },
-  };
-};
-
 export default async function Page({
   searchParams,
 }: {

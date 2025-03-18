@@ -52,7 +52,6 @@ async function Detail({ id }: { id: string }) {
     </div>
   );
 }
-
 // SEO
 export const generateMetadata = async ({
   params,
@@ -66,14 +65,14 @@ export const generateMetadata = async ({
       `${process.env.NEXT_PUBLIC_API_URL}/products/${id}`
     );
     const good: GoodDataType = await res.json();
-    const { title, description, image } = good;
+    const { title, description } = good;
     return {
       title: `상품 ${title} 상세 페이지`,
       description: `상품 설명 - ${description}`,
       openGraph: {
         title: `상품 ${title} 상세 페이지`,
         description: `상품 설명 - ${description}`,
-        images: [{ url: image }],
+        images: [{ url: "/thumbnail.png" }],
       },
     };
   } catch (error) {
