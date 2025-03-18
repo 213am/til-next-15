@@ -1,8 +1,8 @@
-import { IGoodDataType } from "@/types/types";
+import { GoodDataType } from "@/types/types";
 import GoodItem from "./GoodItem";
 
 export default async function RandomGoods() {
-  let randomGoods: IGoodDataType[] = [];
+  let randomGoods: GoodDataType[] = [];
   try {
     const resRandom = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/products?limit=3`,
